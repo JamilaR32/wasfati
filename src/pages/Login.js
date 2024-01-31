@@ -25,33 +25,64 @@ export const Login = () => {
     mutate();
   };
   return (
-    <div style={{ height: "100vh", width: "100vh" }}>
-      <form onSubmit={handleFromSubmit}>
-        <label>
-          Write your email:
-          <input
-            type="email"
-            name="email"
-            id="email"
-            onChange={handleChange}
-            placeholder="email"
-          />
-        </label>
-        <label className="text-center">
-          Your password:
-          <input
-            name="password"
-            type="password"
-            id="password"
-            onChange={handleChange}
-            placeholder="password"
-            className="input input-bordered w-full max-w-xs"
-          />
-        </label>
-        <button type="submit" className="btn btn-accent w-full max-w-xs">
+    <div
+      style={{
+        height: "100vh",
+        width: "100vh",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "50",
+        display: "flex",
+      }}
+    >
+      <div className=" bg-slate-100 p-10 rounded-lg">
+        <h1
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           Login
-        </button>
-      </form>
+        </h1>
+        <form onSubmit={handleFromSubmit}>
+          <div className="flex flex-col " style={{ gap: "10" }}>
+            <label> email:</label>
+            <input
+              className="border-gray-300 border-2 rounded-lg p-2"
+              type="email"
+              name="email"
+              id="email"
+              onChange={handleChange}
+              placeholder="email"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label>password:</label>
+            <input
+              className="border-gray-300 border-2 rounded-lg p-2"
+              name="password"
+              type="password"
+              id="password"
+              onChange={handleChange}
+              placeholder="password"
+            />
+          </div>
+          <div>
+            <button
+              type="submit"
+              class="grid gap-8 btn btn-accent w-full max-w-xs"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

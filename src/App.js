@@ -1,14 +1,5 @@
 import logo from "./logo.svg";
-<<<<<<< HEAD
-import "./App.css";
-<<<<<<< HEAD
-
-function App() {
-  return <h1>hii</h1>;
-=======
-=======
 import "./index.css";
->>>>>>> 2ed7992 (tailwind)
 import { useEffect, useState } from "react";
 import { getToken } from "./api/storage";
 import Usercontext from "./context/Usercontext";
@@ -39,7 +30,6 @@ function App() {
       </div>
     </Usercontext.Provider>
   );
->>>>>>> 51d1a34 (LoginDana)
 }
 
 export default App;
