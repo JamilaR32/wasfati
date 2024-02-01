@@ -9,4 +9,16 @@ const login = async (userInfo) => {
   return data;
 };
 
-export { login };
+const register = async (userInfo) => {
+  const formData = new FormData();
+  for (let key in userInfo) {
+    formData.append(key, userInfo[key]);
+  }
+  const { data } = await instance.post("/signup", formData);
+  if (data.token) {
+    saveToken(data.token);
+  }
+  return data;
+};
+
+export { login, register };

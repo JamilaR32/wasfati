@@ -16,18 +16,8 @@ function App() {
   }, []);
   return (
     <Usercontext.Provider value={[user, setUser]}>
-      <div>
-        <Navbar />
-        <div
-          style={{
-            height: "100vh",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        ></div>
-        <Outlet />
-      </div>
+      <Navbar />
+      <Outlet />
     </Usercontext.Provider>
   );
 }
