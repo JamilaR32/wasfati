@@ -17,23 +17,25 @@ const Register = () => {
   };
   const { mutate } = useMutation({
     mutationKey: ["register"],
-    mutationFn: () => {
-      register(userInfo);
-    },
+    mutationFn: () => register(userInfo),
     onSuccess: () => {
-      const pass = document.getElementById("password");
-      const confpass = document.getElementById("confirmpassword");
-      if (pass.value !== confpass.value) {
-        return alert("Please enter the same passord");
-      } else {
-        setUser(true);
-        navigate("/");
-      }
+      // console.log(userInfo);
+      // const pass = document.getElementById("password");
+      // const confpass = document.getElementById("confirmpassword");
+
+      setUser(true);
+      navigate("/");
+      // console.log(userInfo);
     },
   });
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    mutate();
+    console.log("first", userInfo);
+    if (userInfo.password !== userInfo.confirmpassword) {
+      return alert("Please enter the same passord");
+    } else {
+      mutate();
+    }
   };
   return (
     <div className="h-screen w-screen flex justify-center items-center">
@@ -46,14 +48,12 @@ const Register = () => {
             <div>Sign Up</div>
             <label>E-mail:</label>
             <input
-              id="email"
               name="email"
               placeholder="write your e-mail"
               onChange={handleChange}
             ></input>
             <label>Username:</label>
             <input
-              id="username"
               name="username"
               placeholder="write your username"
               onChange={handleChange}
