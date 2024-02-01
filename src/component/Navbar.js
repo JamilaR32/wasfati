@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import Usercontext from "../context/Usercontext";
+import { deleteToken } from "../api/storage";
 
 const Navbar = () => {
   const [user, setUser] = useContext(Usercontext);
@@ -8,7 +9,16 @@ const Navbar = () => {
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         {user ? (
           <div class="container-fluid">
-            <button>Logout</button>
+            <button
+              to="/"
+              className="nav-link active"
+              onClick={() => {
+                deleteToken();
+                setUser(false);
+              }}
+            >
+              Logout
+            </button>
           </div>
         ) : (
           <div class="container-fluid">
