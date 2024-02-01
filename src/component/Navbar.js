@@ -6,11 +6,17 @@ const Navbar = () => {
   return (
     <div class="container">
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            Navbar
-          </a>
-        </div>
+        {user ? (
+          <div class="container-fluid">
+            <button>Logout</button>
+          </div>
+        ) : (
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              Navbar
+            </a>
+          </div>
+        )}
       </nav>
     </div>
   );

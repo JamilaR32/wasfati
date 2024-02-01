@@ -17,10 +17,18 @@ const Register = () => {
   };
   const { mutate } = useMutation({
     mutationKey: ["register"],
-    mutationFn: () => register(userInfo),
+    mutationFn: () => {
+      register(userInfo);
+    },
     onSuccess: () => {
-      setUser(true);
-      navigate("/");
+      const pass = document.getElementById("password");
+      const confpass = document.getElementById("confirmpassword");
+      if (pass.value !== confpass.value) {
+        return alert("Please enter the same passord");
+      } else {
+        setUser(true);
+        navigate("/");
+      }
     },
   });
   const handleFormSubmit = (e) => {
@@ -28,40 +36,48 @@ const Register = () => {
     mutate();
   };
   return (
-    <div className="h-screen w-screen">
-      <div className="flex flex-col justify-center items-center bg-[red]">
-        <div className="flex flex-col">
-          <label>E-mail:</label>
-          <input
-            id="email"
-            name="email"
-            placeholder="write your e-mail"
-            onChange={handleChange}
-          ></input>
-          <label>Username:</label>
-          <input
-            id="username"
-            name="username"
-            placeholder="write your username"
-            onChange={handleChange}
-          ></input>
-          <label>Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="write a unique password"
-            onChange={handleChange}
-          ></input>
-          <label>Confirm Password:</label>
-          <input
-            type="password"
-            id="confirmpassword"
-            name="confirmpassword"
-            placeholder="write your password again"
-            onChange={handleChange}
-          ></input>
-          <button>signUp</button>
+    <div className="h-screen w-screen flex justify-center items-center">
+      <div className="flex flex-col justify-center items-center bg-[grey] w-[20%] h-[70%]">
+        <div>
+          <form
+            className="flex flex-col justify-center items-center space-y-2"
+            onSubmit={handleFormSubmit}
+          >
+            <div>Sign Up</div>
+            <label>E-mail:</label>
+            <input
+              id="email"
+              name="email"
+              placeholder="write your e-mail"
+              onChange={handleChange}
+            ></input>
+            <label>Username:</label>
+            <input
+              id="username"
+              name="username"
+              placeholder="write your username"
+              onChange={handleChange}
+            ></input>
+            <label>Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="write a unique password"
+              onChange={handleChange}
+            ></input>
+            <label>Confirm Password:</label>
+            <input
+              type="password"
+              id="confirmpassword"
+              name="confirmpassword"
+              placeholder="Confirm your password"
+              onChange={handleChange}
+            ></input>
+            <button type="submit" className="btn bg-slate-50">
+              Sign Up
+            </button>
+          </form>
         </div>
       </div>
     </div>

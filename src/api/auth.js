@@ -14,7 +14,7 @@ const register = async (userInfo) => {
   for (let key in userInfo) {
     formData.append(key, userInfo[key]);
   }
-  const { data } = await instance.post("/users/signup", formData);
+  const { data } = await instance.post("/signup", formData);
   if (data.token) {
     saveToken(data.token);
   }
