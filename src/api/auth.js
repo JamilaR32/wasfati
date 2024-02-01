@@ -10,11 +10,7 @@ const login = async (userInfo) => {
 };
 
 const register = async (userInfo) => {
-  const formData = new FormData();
-  for (let key in userInfo) {
-    formData.append(key, userInfo[key]);
-  }
-  const { data } = await instance.post("/signup", formData);
+  const { data } = await instance.post("/users/signup", userInfo);
   if (data.token) {
     saveToken(data.token);
   }
