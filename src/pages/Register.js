@@ -39,7 +39,7 @@ const Register = () => {
   };
   return (
     <div className="h-screen w-screen flex justify-center items-center">
-      <div className="flex flex-col justify-center items-center bg-[grey] w-[20%] h-[70%]">
+      <div className="flex flex-col justify-center items-center bg-[grey] w-[40%] h-[70%]  ml-[600px]">
         <div>
           <form
             className="flex flex-col justify-center items-center space-y-2"
