@@ -7,7 +7,7 @@ const Navbar = () => {
   const [user, setUser] = useContext(Usercontext);
   return (
     <div className="container">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      {/* <nav className="navbar navbar-expand-lg bg-body-tertiary">
         {user ? (
 
           <div class="container-fluid">
@@ -21,7 +21,7 @@ const Navbar = () => {
             >
               Logout
             </button>
-=======
+
           <div className="container-fluid">
             <button>Logout</button>
 
@@ -33,7 +33,7 @@ const Navbar = () => {
             </a>
           </div>
         )}
-      </nav>
+      </nav> */}
     </div>
   );
 };
