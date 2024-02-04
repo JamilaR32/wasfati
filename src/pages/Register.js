@@ -42,12 +42,12 @@ const Register = () => {
   return (
     <div className="h-screen w-screen flex justify-center items-center">
       <div className="flex flex-col justify-center items-center bg-[grey] w-[30%] h-[70%]  ml-[600px] rounded-xl">
-        <div className="flex flex-col ">
-          <div>
-            <img src={signupimg} className="rounded-full h-[200px]" />
+        <div className="flex flex-col w-full gap-5 ">
+          <div className=" h-[150px]">
+            <img src={signupimg} className="w-full h-full object-contain" />
           </div>
           <form
-            className="flex flex-col justify-center items-center space-y-2 h-[90%]"
+            className="flex flex-col justify-center items-center space-y-2 h-[90%] "
             onSubmit={handleFormSubmit}
           >
             <label>E-mail:</label>
