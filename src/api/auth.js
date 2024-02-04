@@ -2,7 +2,7 @@ import instance from ".";
 import { saveToken } from "./storage";
 
 const login = async (userInfo) => {
-  const { data } = await instance.post("", userInfo);
+  const { data } = await instance.post("/users/signin", userInfo);
   if (data.token) {
     saveToken(data.token);
   }

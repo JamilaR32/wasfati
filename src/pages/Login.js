@@ -9,7 +9,7 @@ export const Login = () => {
   const [user, setUser] = useContext(Usercontext);
   const navigate = useNavigate();
   const { mutate } = useMutation({
-    mutationKey: ["Login"],
+    mutationKey: ["signin"],
     mutationFn: () => login(userInfo),
     onSuccess: () => {
       setUser(true);
@@ -43,10 +43,10 @@ export const Login = () => {
             justifyContent: "center",
           }}
         >
-          Login
+          Signin
         </h1>
         <form onSubmit={handleFromSubmit}>
-          <div className="flex flex-col " style={{ gap: "10" }}>
+          <div className="flex flex-col gap-5 ">
             <label> email:</label>
             <input
               className="border-gray-300 border-2 rounded-lg p-2"
@@ -78,7 +78,7 @@ export const Login = () => {
                 justifyContent: "center",
               }}
             >
-              Login
+              submit
             </button>
           </div>
         </form>

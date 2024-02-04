@@ -3,6 +3,8 @@ import Usercontext from "../context/Usercontext";
 import { useMutation } from "@tanstack/react-query";
 import { register } from "../api/auth";
 import { useNavigate } from "react-router-dom";
+import signupimg from "../assets/signup.png";
+import signinimg from "../assets/signin.png";
 
 const Register = () => {
   const [userInfo, setUserInfo] = useState({});
@@ -30,7 +32,7 @@ const Register = () => {
   });
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log("first", userInfo);
+    // console.log("first", userInfo);
     if (userInfo.password !== userInfo.confirmpassword) {
       return alert("Please enter the same passord");
     } else {
@@ -39,27 +41,32 @@ const Register = () => {
   };
   return (
     <div className="h-screen w-screen flex justify-center items-center">
-      <div className="flex flex-col justify-center items-center bg-[grey] w-[20%] h-[70%]">
-        <div>
+      <div className="flex flex-col justify-center items-center bg-[grey] w-[30%] h-[70%]  ml-[600px] rounded-xl">
+        <div className="flex flex-col w-full gap-5 ">
+          <div className=" h-[150px]">
+            <img src={signupimg} className="w-full h-full object-contain" />
+          </div>
           <form
-            className="flex flex-col justify-center items-center space-y-2"
+            className="flex flex-col justify-center items-center space-y-2 h-[90%] "
             onSubmit={handleFormSubmit}
           >
-            <div>Sign Up</div>
             <label>E-mail:</label>
             <input
+              className="h-[30px] w-[200px] rounded-lg"
               name="email"
               placeholder="write your e-mail"
               onChange={handleChange}
             ></input>
             <label>Username:</label>
             <input
+              className="h-[30px] w-[200px] rounded-lg"
               name="username"
               placeholder="write your username"
               onChange={handleChange}
             ></input>
             <label>Password:</label>
             <input
+              className="h-[30px] w-[200px] rounded-lg"
               type="password"
               id="password"
               name="password"
@@ -68,6 +75,7 @@ const Register = () => {
             ></input>
             <label>Confirm Password:</label>
             <input
+              className="h-[30px] w-[200px] rounded-lg"
               type="password"
               id="confirmpassword"
               name="confirmpassword"
