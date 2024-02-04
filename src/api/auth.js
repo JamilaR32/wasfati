@@ -16,5 +16,12 @@ const register = async (userInfo) => {
   }
   return data;
 };
-
-export { login, register };
+const getAllRecipes = async () => {
+  const { data } = await instance.get("/recipe");
+  return data;
+};
+const getRecipeById = async () => {
+  const { data } = await instance.get("/api/recipe/:_id");
+  return data;
+};
+export { login, register, getAllRecipes, getRecipeById };

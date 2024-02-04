@@ -6,8 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Login } from "./pages/Login";
-import Home from "./pages/Home";
 import Register from "./pages/Register";
+import Recipe from "./pages/Recipe";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
@@ -19,12 +20,16 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/home",
-        element: <Home />,
+        path: "/",
+        element: <Recipe />,
       },
       {
         path: "/signup",
         element: <Register />,
+      },
+      {
+        path: "/*",
+        element: <NotFoundPage />,
       },
     ],
   },
