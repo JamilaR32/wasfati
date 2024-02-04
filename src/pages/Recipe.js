@@ -1,6 +1,7 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getAllRecipes } from "../api/auth";
 import RecipeCard from "../component/RecipeCard";
+import { useNavigate } from "react-router-dom";
 
 const Recipe = () => {
   const { data: recipes, isLoading } = useQuery({
@@ -8,12 +9,16 @@ const Recipe = () => {
     queryFn: () => getAllRecipes(),
   });
 
+  const navigate = useNavigate();
   const recipesCard = recipes?.map((recipe) => (
     <RecipeCard
       name={recipe.name}
       text={recipe.text}
       image={recipe.image}
       _id={recipe._id}
+      onClick={() => {
+        navigate(`/recipe/${recipe._id}`);
+      }}
     />
   ));
 

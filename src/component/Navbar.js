@@ -9,7 +9,6 @@ const Navbar = () => {
     <div className="container">
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         {user ? (
-
           <div class="container-fluid">
             <button
               to="/"
@@ -21,10 +20,9 @@ const Navbar = () => {
             >
               Logout
             </button>
-=======
-          <div className="container-fluid">
-            <button>Logout</button>
-
+            <div className="container-fluid">
+              <button>Logout</button>
+            </div>
           </div>
         ) : (
           <div className="container-fluid">
