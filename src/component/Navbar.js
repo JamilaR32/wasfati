@@ -12,8 +12,10 @@ const Navbar = () => {
           <img src={logo} className="rounded-full h-[75px] w-[75px]" />
         </div>
         {user ? (
-          <div className="container-fluid">
+          <div class="container-fluid">
             <button
+              to="/"
+              className="nav-link active"
               onClick={() => {
                 deleteToken();
                 setUser(false);
@@ -21,6 +23,17 @@ const Navbar = () => {
             >
               Logout
             </button>
+
+            <div className="container-fluid">
+              <button
+                onClick={() => {
+                  deleteToken();
+                  setUser(false);
+                }}
+              >
+                Logout
+              </button>
+            </div>
           </div>
         ) : (
           <div className="container-fluid">
