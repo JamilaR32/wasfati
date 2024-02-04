@@ -14,6 +14,7 @@ import OneRecipe from "./pages/OneRecipe";
 const router = createBrowserRouter([
   {
     path: "/",
+
     element: <App />,
     children: [
       {
