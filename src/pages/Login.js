@@ -26,6 +26,7 @@ export const Login = () => {
   };
   return (
     <div
+      className=" relative"
       style={{
         height: "100vh",
         width: "100vh",
@@ -35,7 +36,7 @@ export const Login = () => {
         display: "flex",
       }}
     >
-      <div className=" bg-slate-100 p-10 rounded-lg">
+      <div className=" bg-slate-100 p-10 rounded-lg absolute z-auto">
         <h1
           style={{
             display: "flex",
