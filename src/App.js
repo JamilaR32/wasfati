@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./index.css";
 import { useEffect, useState } from "react";
 import { getToken } from "./api/storage";

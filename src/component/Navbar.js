@@ -2,6 +2,9 @@ import { useContext, useState } from "react";
 import Usercontext from "../context/Usercontext";
 import logo from "../assets/logo-w.png";
 import { deleteToken } from "../api/storage";
+
+import RecipeCard from "./RecipeCard";
+
 const Navbar = () => {
   const [user, setUser] = useContext(Usercontext);
   return (
@@ -11,6 +14,19 @@ const Navbar = () => {
           <img src={logo} className="rounded-full h-[75px] w-[75px]" />
         </div>
         {user ? (
+
+          <div class="container-fluid">
+            <button
+              to="/"
+              className="nav-link active"
+              onClick={() => {
+                deleteToken();
+                setUser(false);
+              }}
+            >
+              Logout
+            </button>
+=======
           <div className="container-fluid">
             <button
               onClick={() => {
