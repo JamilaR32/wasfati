@@ -23,17 +23,6 @@ const Navbar = () => {
             >
               Logout
             </button>
-
-            <div className="container-fluid">
-              <button
-                onClick={() => {
-                  deleteToken();
-                  setUser(false);
-                }}
-              >
-                Logout
-              </button>
-            </div>
           </div>
         ) : (
           <div className="container-fluid">
