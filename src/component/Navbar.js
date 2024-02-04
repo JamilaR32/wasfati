@@ -2,8 +2,7 @@ import { useContext, useState } from "react";
 import Usercontext from "../context/Usercontext";
 import logo from "../assets/logo-w.png";
 import { deleteToken } from "../api/storage";
-
-import RecipeCard from "./RecipeCard";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [user, setUser] = useContext(Usercontext);
@@ -14,10 +13,8 @@ const Navbar = () => {
           <img src={logo} className="rounded-full h-[75px] w-[75px]" />
         </div>
         {user ? (
-
           <div class="container-fluid">
             <button
-              to="/"
               className="nav-link active"
               onClick={() => {
                 deleteToken();
@@ -26,22 +23,23 @@ const Navbar = () => {
             >
               Logout
             </button>
-=======
-          <div className="container-fluid">
-            <button
-              onClick={() => {
-                deleteToken();
-                setUser(false);
-              }}
-            >
-              Logout
-            </button>
+
+            <div className="container-fluid">
+              <button
+                onClick={() => {
+                  deleteToken();
+                  setUser(false);
+                }}
+              >
+                Logout
+              </button>
+            </div>
           </div>
         ) : (
           <div className="container-fluid">
-            <a className="navbar-brand" href="/Login">
+            <NavLink className="navbar-brand" to="/signin">
               SignIn
-            </a>
+            </NavLink>
           </div>
         )}
       </nav>

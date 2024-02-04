@@ -9,6 +9,7 @@ import bg1 from "./assets/bg-w.png";
 import bg2 from "./assets/bg-w2.png";
 import bg3 from "./assets/bg-w3.png";
 // import logo from "./assets/logo-w.png";
+import Sidebar from "./component/Sidebar";
 
 function App() {
   const [user, setUser] = useState(false);
@@ -35,6 +36,7 @@ function App() {
       <div className="w-screen h-screen relative ">
         <img className="absolute z-[-1]" src={theImage} />
         <Navbar />
+        {/* <Sidebar /> */}
         <Outlet />
       </div>
 
