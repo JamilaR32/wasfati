@@ -1,11 +1,27 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
+import { getAllCategory } from "../api/auth";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const { data: category } = useQuery({
+  const { data: categories } = useQuery({
     queryKey: ["category"],
+    queryFn: () => getAllCategory(),
   });
-
+  console.log(categories);
+  const categoriesList = categories?.map((item) => {
+    console.log(item);
+    return (
+      <li>
+        <Link
+          to="/signin"
+          className="block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700"
+        >
+          {item.name}
+        </Link>
+      </li>
+    );
+  });
   return (
     <div className="w-[25%]">
       <div className=" h-screen flex-col justify-between border-e bg-white">
@@ -20,39 +36,7 @@ const Sidebar = () => {
               </a>
             </li>
 
-            <li>
-              <details className="group [&_summary::-webkit-details-marker]:hidden">
-                <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-                  <span className="text-sm font-medium"> Breakfast </span>
-                </summary>
-              </details>
-            </li>
-
-            <li>
-              <a
-                href=""
-                className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-              >
-                Lunch
-              </a>
-            </li>
-
-            <li>
-              <a
-                href=""
-                className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-              >
-                Dinner
-              </a>
-            </li>
-
-            <li>
-              <details className="group [&_summary::-webkit-details-marker]:hidden">
-                <summary className="flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700">
-                  <span className="text-sm font-medium"> Deseart </span>
-                </summary>
-              </details>
-            </li>
+            <li>{categoriesList}</li>
           </ul>
         </div>
       </div>
