@@ -25,6 +25,10 @@ const Navbar = () => {
             </button>
 
             <div className="container-fluid">
+              <button>Logout</button>
+
+
+            <div className="container-fluid">
               <button
                 onClick={() => {
                   deleteToken();
@@ -33,6 +37,7 @@ const Navbar = () => {
               >
                 Logout
               </button>
+
             </div>
           </div>
         ) : (

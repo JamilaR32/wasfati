@@ -9,6 +9,7 @@ import { Login } from "./pages/Login";
 import Register from "./pages/Register";
 import Recipe from "./pages/Recipe";
 import NotFoundPage from "./pages/NotFoundPage";
+import OneRecipe from "./pages/OneRecipe";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +21,12 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: "/",
+        path: "/recipe",
         element: <Recipe />,
+      },
+      {
+        path: "/recipe/:recipeId",
+        element: <OneRecipe />,
       },
       {
         path: "/signup",
