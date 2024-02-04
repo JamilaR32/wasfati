@@ -27,6 +27,8 @@ function App() {
     theImage = bg2;
   } else if (location.pathname.includes("")) {
     theImage = bg1;
+  } else if (location.pathname.includes("receipe")) {
+    theImage = bg3;
   }
 
   return (
