@@ -23,7 +23,7 @@ const Navbar = () => {
             >
               Logout
             </button>
-</div>
+         
             <div className="container-fluid">
               <button>Logout</button>
 
