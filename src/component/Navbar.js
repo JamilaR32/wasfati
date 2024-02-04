@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import Usercontext from "../context/Usercontext";
 import logo from "../assets/logo-w.png";
 import { deleteToken } from "../api/storage";
+
 const Navbar = () => {
   const [user, setUser] = useContext(Usercontext);
   return (
