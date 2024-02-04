@@ -34,9 +34,11 @@ function App() {
   return (
     <Usercontext.Provider value={[user, setUser]}>
       <div className="w-screen h-screen relative ">
-        <img className="absolute z-[-1]" src={theImage} />
+        <img className="absolute z-[-2]" src={theImage} />
         <Navbar />
-        {/* <Sidebar /> */}
+
+        <Sidebar />
+
         <Outlet />
       </div>
 

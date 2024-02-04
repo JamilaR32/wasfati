@@ -8,7 +8,7 @@ const Navbar = () => {
   const [user, setUser] = useContext(Usercontext);
   return (
     <div className="container w-full">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-[#00000020] w-screen">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-[white] w-screen">
         <div className=" w-full flex justify-center items-center h-full">
           <img src={logo} className="rounded-full h-[75px] w-[75px]" />
         </div>
