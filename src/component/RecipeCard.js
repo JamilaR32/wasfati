@@ -1,14 +1,15 @@
-import { useMutation, useQueryRecipe } from "@tanstack/react-query";
-import React, { useState } from "react";
-
-import { getAllRecipes, getRecipeById } from "../api/auth";
+import React from "react";
 import { BASE_URL } from "../api";
 
 const RecipeCard = ({ name, text, image, _id }) => {
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure>
-        <img src={`${BASE_URL}/${image}`} alt="Recipe!!" />
+        <img
+          src={`${BASE_URL}/${image}`}
+          alt="Recipe!!"
+          className="w-[200px]"
+        />
       </figure>
       <div className="card-body">
         {_id}
