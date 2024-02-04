@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import Usercontext from "../context/Usercontext";
 import logo from "../assets/logo-w.png";
 import { deleteToken } from "../api/storage";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [user, setUser] = useContext(Usercontext);
@@ -14,7 +15,6 @@ const Navbar = () => {
         {user ? (
           <div class="container-fluid">
             <button
-              to="/"
               className="nav-link active"
               onClick={() => {
                 deleteToken();
@@ -37,9 +37,9 @@ const Navbar = () => {
           </div>
         ) : (
           <div className="container-fluid">
-            <a className="navbar-brand" href="/Login">
+            <NavLink className="navbar-brand" to="/signin">
               SignIn
-            </a>
+            </NavLink>
           </div>
         )}
       </nav>
