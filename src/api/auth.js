@@ -25,4 +25,8 @@ const getRecipeById = async (recipeId) => {
   return res.data;
 };
 
-export { login, register, getAllRecipes, getRecipeById };
+const getAllCategory = async () => {
+  const { data } = await instance.get("/category");
+  return data;
+};
+export { login, register, getAllRecipes, getRecipeById, getAllCategory };

@@ -14,6 +14,7 @@ import OneRecipe from "./pages/OneRecipe";
 const router = createBrowserRouter([
   {
     path: "/",
+
     element: <App />,
     children: [
       {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <Register />,
       },
+
       {
         path: "/*",
         element: <NotFoundPage />,
