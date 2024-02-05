@@ -1,5 +1,6 @@
 import React from "react";
 import { BASE_URL } from "../api";
+import { Button } from "bootstrap";
 
 const RecipeCard = ({
   name,
@@ -34,7 +35,16 @@ const RecipeCard = ({
           </button>
           <div className="card-actions justify-end">
             <div>{name}</div>
-            {isOwner && <div> Edit / delete </div>}
+            {isOwner && (
+              <div className="flex">
+                <button className=" border border-black px-5 py-1 rounded-md hover:bg-[black] hover:text-white">
+                  Edit
+                </button>
+                <button className=" border border-black px-5 py-1 rounded-md hover:bg-[black] hover:text-white">
+                  Delete
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
