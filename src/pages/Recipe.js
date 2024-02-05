@@ -51,6 +51,7 @@ const Recipe = () => {
         <div
           className="grid grid-cols-3 gap-3 "
           style={{
+            height: "100vh",
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-around",
