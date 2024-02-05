@@ -1,5 +1,8 @@
 import React from "react";
 
+import Button from "./Button";
+
+
 const Modal = ({ show = false, close = () => {}, children }) => {
   if (!show) return null;
   return (
@@ -10,7 +13,8 @@ const Modal = ({ show = false, close = () => {}, children }) => {
         }}
         className="w-full h-full bg-[#00000090] absolute inset-0 z-[3]"
       ></div>
-      <div className="border border-black rounded-lg w-[40%] h-[40%] bg-white z-[4] overflow-hidden">
+
+      <div className="border border-black rounded-lg w-[40%] h-[60%] bg-white z-[4] overflow-hidden">
         {children}
       </div>
     </div>
