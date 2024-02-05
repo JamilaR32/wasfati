@@ -3,8 +3,8 @@ import Usercontext from "../context/Usercontext";
 import logo from "../assets/logo-w.png";
 import { deleteToken } from "../api/storage";
 import { NavLink } from "react-router-dom";
-
-const Navbar = () => {
+import Button from "./Button";
+const Navbar = ({ setShowModal }) => {
   const [user, setUser] = useContext(Usercontext);
   return (
     <div className="container w-full">
