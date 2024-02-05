@@ -1,7 +1,15 @@
 import React from "react";
 import { BASE_URL } from "../api";
+import { Button } from "bootstrap";
 
-const RecipeCard = ({ name, text, image, _id, onClick = () => {} }) => {
+const RecipeCard = ({
+  name,
+  text,
+  image,
+  _id,
+  isOwner = false,
+  onClick = () => {},
+}) => {
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure>
@@ -25,6 +33,19 @@ const RecipeCard = ({ name, text, image, _id, onClick = () => {} }) => {
           >
             View Recipe
           </button>
+          <div className="card-actions justify-end">
+            <div>{name}</div>
+            {isOwner && (
+              <div className="flex">
+                <button className=" border border-black px-5 py-1 rounded-md hover:bg-[black] hover:text-white">
+                  Edit
+                </button>
+                <button className=" border border-black px-5 py-1 rounded-md hover:bg-[black] hover:text-white">
+                  Delete
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

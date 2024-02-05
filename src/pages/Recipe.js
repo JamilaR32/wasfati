@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAllRecipes } from "../api/auth";
+import { getAllRecipes, me } from "../api/auth";
 import RecipeCard from "../component/RecipeCard";
 import { useNavigate } from "react-router-dom";
 import Modal from "../component/Modal";
@@ -11,7 +11,16 @@ const Recipe = () => {
     queryKey: ["recipes"],
     queryFn: () => getAllRecipes(),
   });
+
+
+  const { data: mee } = useQuery({
+    queryKey: ["me"],
+    queryFn: () => me(),
+  });
+  console.log(mee);
+
   const [showModal, setShowModal] = useState(false);
+
   const navigate = useNavigate();
   const recipesCard = recipes?.map((recipe) => (
     <RecipeCard
@@ -19,7 +28,11 @@ const Recipe = () => {
       text={recipe.text}
       image={recipe.image}
       _id={recipe._id}
+
+      isOwner={recipe.user == mee._id}
+
       setShowModal={setShowModal}
+
       onClick={() => {
         navigate(`/recipe/${recipe._id}`);
       }}

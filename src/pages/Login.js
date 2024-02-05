@@ -13,7 +13,7 @@ export const Login = () => {
     mutationFn: () => login(userInfo),
     onSuccess: () => {
       setUser(true);
-      navigate("/home");
+      navigate("/recipe");
     },
   });
   const handleChange = (e) => {

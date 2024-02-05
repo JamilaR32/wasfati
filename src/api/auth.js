@@ -30,6 +30,14 @@ const getAllCategory = async () => {
   return data;
 };
 
+const me = async () => {
+  const res = await instance.get("/users/me");
+  return res.data;
+};
+
+export { login, register, getAllRecipes, getRecipeById, getAllCategory, me };
+
+
 const getAllingrediants = async () => {
   const { data } = await instance.get("/ingrediants");
   return data;
@@ -48,3 +56,4 @@ export {
   getAllingrediants,
   createIng,
 };
+
