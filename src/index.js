@@ -10,12 +10,13 @@ import Register from "./pages/Register";
 import Recipe from "./pages/Recipe";
 import NotFoundPage from "./pages/NotFoundPage";
 import OneRecipe from "./pages/OneRecipe";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
-
     element: <App />,
+
     children: [
       {
         path: "/signin",
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: "/*",
         element: <NotFoundPage />,
+      },
+      {
+        path: "/home",
+        element: <Home />,
       },
     ],
   },

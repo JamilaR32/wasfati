@@ -3,7 +3,7 @@ import Usercontext from "../context/Usercontext";
 import { useNavigate } from "react-router-dom";
 import { useMutation } from "@tanstack/react-query";
 import { login } from "../api/auth";
-
+import signinpic from "../assets/signin.png";
 export const Login = () => {
   const [userInfo, setUserInfo] = useState({});
   const [user, setUser] = useContext(Usercontext);
@@ -26,29 +26,20 @@ export const Login = () => {
   };
   return (
     <div
-      className=" relative"
+      className="h-screen w-screen"
       style={{
-        height: "100vh",
-        width: "100vh",
         alignItems: "center",
         justifyContent: "center",
         gap: "50",
         display: "flex",
       }}
     >
-      <div className=" bg-slate-100 p-10 rounded-lg absolute z-auto">
-        <h1
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          Signin
-        </h1>
-        <form onSubmit={handleFromSubmit}>
-          <div className="flex flex-col gap-5 ">
-            <label> email:</label>
+      <div className=" bg-slate-100 p-10 rounded-lg flex justify-items-center">
+        <img src={signinpic} className="h-[200px]" />
+
+        <form onSubmit={handleFromSubmit} className="space-y-3">
+          <div className="flex flex-col  ">
+            <label> E-mail:</label>
             <input
               className="border-gray-300 border-2 rounded-lg p-2"
               type="email"
@@ -59,7 +50,7 @@ export const Login = () => {
             />
           </div>
           <div className="flex flex-col">
-            <label>password:</label>
+            <label>Password:</label>
             <input
               className="border-gray-300 border-2 rounded-lg p-2"
               name="password"
@@ -72,14 +63,14 @@ export const Login = () => {
           <div>
             <button
               type="submit"
-              class="grid gap-8 btn btn-accent w-full max-w-xs"
+              className="grid gap-8 btn btn-accent w-full max-w-xs"
               style={{
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
               }}
             >
-              submit
+              SignIn
             </button>
           </div>
         </form>

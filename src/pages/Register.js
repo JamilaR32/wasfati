@@ -52,21 +52,21 @@ const Register = () => {
           >
             <label>E-mail:</label>
             <input
-              className="h-[30px] w-[200px] rounded-lg"
+              className="h-[30px] w-[200px] border-gray-300 border-2 rounded-lg p-2"
               name="email"
               placeholder="write your e-mail"
               onChange={handleChange}
             ></input>
             <label>Username:</label>
             <input
-              className="h-[30px] w-[200px] rounded-lg"
+              className="h-[30px] w-[200px] border-gray-300 border-2 rounded-lg p-2"
               name="username"
               placeholder="write your username"
               onChange={handleChange}
             ></input>
             <label>Password:</label>
             <input
-              className="h-[30px] w-[200px] rounded-lg"
+              className="h-[30px] w-[200px] border-gray-300 border-2 rounded-lg p-2"
               type="password"
               id="password"
               name="password"
@@ -75,7 +75,7 @@ const Register = () => {
             ></input>
             <label>Confirm Password:</label>
             <input
-              className="h-[30px] w-[200px] rounded-lg"
+              className="h-[30px] w-[200px] border-gray-300 border-2 rounded-lg p-2"
               type="password"
               id="confirmpassword"
               name="confirmpassword"
