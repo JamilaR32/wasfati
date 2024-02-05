@@ -7,10 +7,10 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [user, setUser] = useContext(Usercontext);
   return (
-    <div className="container w-full">
-      <nav className="navbar navbar-expand-lg bg-body-tertiary bg-[white] w-screen">
-        <div className=" w-full flex justify-center items-center h-full">
-          <img src={logo} className="rounded-full h-[75px] w-[75px]" />
+    <div className="container w-screen">
+      <nav className="navbar navbar-expand-xs bg-body-tertiary w-screen flex">
+        <div className=" w-screen flex justify-center h-full">
+          <img src={logo} className="rounded-full h-[90px] w-[90]" />
         </div>
         {user ? (
           <div class="container-fluid">
@@ -25,9 +25,18 @@ const Navbar = () => {
             </button>
           </div>
         ) : (
-          <div className="container-fluid">
-            <NavLink className="navbar-brand" to="/signin">
-              SignIn
+          <div className="container-fluid gap-2 ">
+            <NavLink
+              className="navbar-brand bg-[#00000030] btn max-w-xs"
+              to="/signin"
+            >
+              Sign In
+            </NavLink>
+            <NavLink
+              className="navbar-brand bg-[#00000030] btn max-w-xs"
+              to="/signup"
+            >
+              Sign Up
             </NavLink>
           </div>
         )}

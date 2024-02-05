@@ -8,7 +8,6 @@ import { Outlet, useLocation } from "react-router-dom";
 import bg1 from "./assets/bg-w.png";
 import bg2 from "./assets/bg-w2.png";
 import bg3 from "./assets/bg-w3.png";
-// import logo from "./assets/logo-w.png";
 import Sidebar from "./component/Sidebar";
 
 function App() {
@@ -27,21 +26,21 @@ function App() {
     theImage = bg2;
   } else if (location.pathname.includes("")) {
     theImage = bg1;
-  } else if (location.pathname.includes("receipe")) {
+  } else if (location.pathname.includes("recipe")) {
     theImage = bg3;
   }
 
   return (
     <Usercontext.Provider value={[user, setUser]}>
       <div className="w-screen h-screen relative ">
-        <img className="absolute z-[-2]" src={theImage} />
-        <Navbar />
+        <img className=" h-screen w-screen absolute z-[-2]" src={theImage} />
 
-        <Sidebar />
-
-        <Outlet />
+        <div className="absolute">
+          <Navbar />
+          {/* <Sidebar /> */}
+          <Outlet />
+        </div>
       </div>
-
       {/* <div className="w-screen h-screen bg-red-500 justify-center items-center flex">
         <div className="w-[300px] h-[300px] bg-green-500 justify-center items-center flex relative z-[1] ">
           <div className="w-full h-full bg-yellow-500 z-[3]"></div>
