@@ -29,7 +29,7 @@ const Recipe = () => {
   const [category, setCategory] = useState("");
   return (
     <div className=" mx-10 SS">
-      {user ? (
+      {!user ? (
         <div
           className="grid grid-cols-3 gap-3 "
           style={{
