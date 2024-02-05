@@ -9,11 +9,11 @@ const Recipe = () => {
     queryFn: () => getAllRecipes(),
   });
 
-  const { data: me } = useQuery({
+  const { data: mee } = useQuery({
     queryKey: ["me"],
     queryFn: () => me(),
   });
-
+  console.log(mee);
   const navigate = useNavigate();
   const recipesCard = recipes?.map((recipe) => (
     <RecipeCard
@@ -21,7 +21,7 @@ const Recipe = () => {
       text={recipe.text}
       image={recipe.image}
       _id={recipe._id}
-      isOwner={recipe.user == me.id}
+      isOwner={recipe.user == mee._id}
       onClick={() => {
         navigate(`/recipe/${recipe._id}`);
       }}

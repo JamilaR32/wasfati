@@ -30,7 +30,7 @@ const getAllCategory = async () => {
   return data;
 };
 const me = async () => {
-  const res = await instance.get("/api/auth/me");
+  const res = await instance.get("/users/me");
   return res.data;
 };
 
