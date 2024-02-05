@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getAllRecipes } from "../api/auth";
+import { getAllRecipes, me } from "../api/auth";
 import RecipeCard from "../component/RecipeCard";
 import { useNavigate } from "react-router-dom";
 
@@ -9,6 +9,11 @@ const Recipe = () => {
     queryFn: () => getAllRecipes(),
   });
 
+  const { data: me } = useQuery({
+    queryKey: ["me"],
+    queryFn: () => me(),
+  });
+
   const navigate = useNavigate();
   const recipesCard = recipes?.map((recipe) => (
     <RecipeCard
@@ -16,6 +21,7 @@ const Recipe = () => {
       text={recipe.text}
       image={recipe.image}
       _id={recipe._id}
+      isOwner={recipe.user == me.id}
       onClick={() => {
         navigate(`/recipe/${recipe._id}`);
       }}

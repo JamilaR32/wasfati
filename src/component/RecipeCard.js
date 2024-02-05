@@ -1,7 +1,14 @@
 import React from "react";
 import { BASE_URL } from "../api";
 
-const RecipeCard = ({ name, text, image, _id, onClick = () => {} }) => {
+const RecipeCard = ({
+  name,
+  text,
+  image,
+  _id,
+  isOwner = false,
+  onClick = () => {},
+}) => {
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
       <figure>
@@ -25,6 +32,10 @@ const RecipeCard = ({ name, text, image, _id, onClick = () => {} }) => {
           >
             View Recipe
           </button>
+          <div className="card-actions justify-end">
+            <div>{name}</div>
+            {isOwner && <div> Edit / delete </div>}
+          </div>
         </div>
       </div>
     </div>

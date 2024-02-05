@@ -29,4 +29,9 @@ const getAllCategory = async () => {
   const { data } = await instance.get("/category");
   return data;
 };
-export { login, register, getAllRecipes, getRecipeById, getAllCategory };
+const me = async () => {
+  const res = await instance.get("/api/auth/me");
+  return res.data;
+};
+
+export { login, register, getAllRecipes, getRecipeById, getAllCategory, me };
