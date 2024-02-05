@@ -35,7 +35,7 @@ function App() {
       <div className="w-screen h-screen relative ">
         <img className=" h-screen w-screen absolute z-[-2]" src={theImage} />
 
-        <div className="absolute">
+        <div className="absolute w-screen h-screen overflow-scroll ">
           <Navbar />
           {/* <Sidebar /> */}
           <Outlet />

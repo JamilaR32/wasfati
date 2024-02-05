@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Fuse from "fuse.js";
-import { getAllingrediants } from "../api/auth";
-
+import { createIng, getAllingrediants } from "../api/auth";
+import Modal from "../component/Modal";
+import { useMutation } from "@tanstack/react-query";
 const Home = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [name, setName] = useState("");
+
+  const { mutate } = useMutation({
+    mutationKey: ["addIng"],
+    mutationFn: () => createIng({ name: name }),
+    onSuccess: () => {
+      setShowModal(false);
+    },
+  });
   // const books = [
   //   {
   //     title: "Old Man's War",
@@ -30,10 +41,29 @@ const Home = () => {
   // const result = fuse.search("lock");
   // console.log(ing());
   return (
-    <div className="bg-[white] z-[10]">
-      {/* <button onClick={""}>HHHHHHH</button> */}
-      {/* <input></input> */}
-      {/* <label></label> */}
+    <div>
+      <button
+        onClick={() => {
+          setShowModal(true);
+        }}
+      >
+        Click
+      </button>
+      <Modal
+        show={showModal}
+        close={() => {
+          setShowModal(false);
+        }}
+      >
+        <div className="w-full h-full bg-red-500">
+          <input
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          ></input>
+          <button onClick={mutate}>Add</button>
+        </div>
+      </Modal>
     </div>
   );
 };

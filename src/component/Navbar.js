@@ -14,6 +14,13 @@ const Navbar = () => {
         </div>
         {user ? (
           <div class="container-fluid">
+            <NavLink
+              className="navbar-brand bg-[#00000030] btn max-w-xs"
+              to="/"
+            >
+              Home
+            </NavLink>
+
             <button
               className="nav-link active"
               onClick={() => {

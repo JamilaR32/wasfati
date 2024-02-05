@@ -34,6 +34,11 @@ const getAllingrediants = async () => {
   const { data } = await instance.get("/ingrediants");
   return data;
 };
+
+const createIng = async (name) => {
+  const { data } = await instance.post("/ingrediants", name);
+  return data;
+};
 export {
   login,
   register,
@@ -41,4 +46,5 @@ export {
   getRecipeById,
   getAllCategory,
   getAllingrediants,
+  createIng,
 };
